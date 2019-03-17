@@ -51,10 +51,18 @@ Run the following in the project's root directory.
 The root directory is where `Pipfile` and `package.json` live.
 1. Install node modules
 ```
-npm install
+$ npm install
+```
+You should now be able to start a frontend dev server
+```
+$ npm start
 ```
 
 2. Install python modules
 ```
-pipenv install
+$ pipenv install
+```
+You should now be able to start an api server
+```
+$ pipenv run flask run
 ```
