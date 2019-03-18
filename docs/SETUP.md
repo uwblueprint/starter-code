@@ -6,11 +6,11 @@
 - PostgreSQL, version: `11.\*`
 
 1. Homebrew  
- Install Homebrew by following the instructions at <https://brew.sh/>  
- Once installed, you should be able to run `brew` on your terminal  
- ```
- $ brew
- ```
+    Install Homebrew by following the instructions at <https://brew.sh/>  
+    Once installed, you should be able to run `brew` on your terminal  
+    ```
+    $ brew
+    ```
 2. Install NodeJS  
 ```
 brew install node
