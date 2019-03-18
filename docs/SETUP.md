@@ -14,20 +14,19 @@ $ brew
 2. Install NodeJS  
 ```
 brew install node
-```
-Ensure you've installed the correct version
+```  
+Ensure you've installed the correct version  
 ```
 $ node --version
 v10.15.2
 $ npm --version
 v6.4.1
 ```
-
 3. Install Python  
 ```
 brew install python
-```
-Ensure you've installed the correct version
+```  
+Ensure you've installed the correct version  
 ```
 $ python --version
 Python 3.7.2
