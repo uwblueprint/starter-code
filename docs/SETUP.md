@@ -1,18 +1,17 @@
 # Setup
 ### Software Prereqs:
 - Homebrew
-- Node, version: 10.\*
-- Python, version: 3.7.\*
-- PostgreSQL, version: 11.\*
+- Node, version: `10.\*`
+- Python, version: `3.7.\*`
+- PostgreSQL, version: `11.\*`
 
-1. Homebrew
-Install Homebrew by following the instructions at <https://brew.sh/>
-You should now be able to run brew on your command line
+1. Homebrew  
+Install Homebrew by following the instructions at <https://brew.sh/>  
+Once installed, you should be able to run `brew` on your terminal  
 ```
 $ brew
 ```
-
-2. Install NodeJS
+2. Install NodeJS  
 ```
 brew install node
 ```
@@ -24,7 +23,7 @@ $ npm --version
 v6.4.1
 ```
 
-3. Install Python
+3. Install Python  
 ```
 brew install python
 ```
@@ -34,7 +33,7 @@ $ python --version
 Python 3.7.2
 ```
 
-4. Install PostgreSQL
+4. Install PostgreSQL  
 ```
 brew install postgres
 ```
@@ -49,7 +48,7 @@ psql (PostgreSQL) 11.2
 ### Project dependencies:  
 Run the following in the project's root directory.  
 The root directory is where `Pipfile` and `package.json` live.
-1. Install node modules
+1. Install node modules  
 ```
 $ npm install
 ```
@@ -58,7 +57,7 @@ You should now be able to start a frontend dev server
 $ npm start
 ```
 
-2. Install python modules
+2. Install python modules  
 ```
 $ pipenv install
 ```
