@@ -66,10 +66,3 @@ You should now be able to start an api server
 ```
 $ pipenv run flask run
 ```
-
-### Development
-
-Run the following to format python code:
-```
-yapf backend -r -i
-```
