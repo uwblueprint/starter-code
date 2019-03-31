@@ -22,6 +22,7 @@ These technologies are proven, popular, easy to learn, and provide fast developm
 
 ## Get Started!
 - [Setup](docs/SETUP.md)
+- [Setup for Windows](docs/SETUP_WINDOWS.md)
 - [Development](docs/DEVELOPMENT.md)
 - [Deployment](docs/DEPLOYMENT.md)
 
