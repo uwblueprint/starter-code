@@ -1,9 +1,10 @@
 # Setup
 ### Software Prereqs:
 - Homebrew
-- Node, version: `10.\*`
-- Python, version: `3.7.\*`
-- PostgreSQL, version: `11.\*`
+- Git
+- Node, version: `10.*`
+- Python, version: `3.7.*`
+- PostgreSQL, version: `11.*`
 
 1. Homebrew  
     Install Homebrew by following the instructions at <https://brew.sh/>  
@@ -11,7 +12,11 @@
     ```
     $ brew
     ```
-2. Install NodeJS  
+2. Install Git  
+    ```
+    $ brew install git
+    ```
+3. Install NodeJS  
     ```
     $ brew install node
     ```
@@ -22,7 +27,7 @@
     $ npm --version
     v6.4.1
     ```
-3. Install Python  
+4. Install Python  
     ```
     $ brew install python
     ```
@@ -31,7 +36,7 @@
     $ python --version
     Python 3.7.2
     ```
-4. Install PostgreSQL  
+5. Install PostgreSQL  
     ```
     $ brew install postgres
     ```
@@ -42,7 +47,16 @@
     $ psql -V
     psql (PostgreSQL) 11.2
     ```
-### Project dependencies:  
+### Clone the Project:
+1. Get the code for the starter-code project onto your computer  
+    ```
+    $ git clone https://github.com/uwblueprint/starter-code.git
+    ```
+2. Go into the starter-code project directory  
+    ```
+    $ cd starter-code
+    ```
+### Install Project Dependencies:
 Run the following in the project's root directory. The root directory is where `Pipfile` and `package.json` live.
 1. Install node modules  
     ```
