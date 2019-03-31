@@ -1,12 +1,13 @@
 # Setup
 ### Software Prereqs:
-- Homebrew
-- Git
+- Homebrew, any version
+- Git, any version
 - Node, version: `10.*`
 - Python, version: `3.7.*`
+- Pipenv, any version
 - PostgreSQL, version: `11.*`
 
-1. Homebrew  
+1. Install Homebrew  
     Install Homebrew by following the instructions at <https://brew.sh/>  
     Once installed, you should be able to run `brew` on your terminal
     ```
@@ -36,7 +37,11 @@
     $ python --version
     Python 3.7.2
     ```
-5. Install PostgreSQL  
+5. Install Pipenv  
+    ```
+    $ brew install pipenv
+    ```
+6. Install PostgreSQL  
     ```
     $ brew install postgres
     ```
@@ -47,18 +52,18 @@
     $ psql -V
     psql (PostgreSQL) 11.2
     ```
-### Clone the Project:
-1. Get the code for the starter-code project onto your computer  
+### Clone your Project:
+7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.  
     ```
-    $ git clone https://github.com/uwblueprint/starter-code.git
+    $ git clone https://github.com/uwblueprint/<my-project>.git
     ```
-2. Go into the starter-code project directory  
+8. Go into your project directory  
     ```
-    $ cd starter-code
+    $ cd <my-project>
     ```
-### Install Project Dependencies:
-Run the following in the project's root directory. The root directory is where `Pipfile` and `package.json` live.
-1. Install node modules  
+### Setup Frontend:
+Run the following in your project's root directory. The root directory should be where `Pipfile` and `package.json` are.
+9. Install node modules  
     ```
     $ npm install
     ```
@@ -66,7 +71,16 @@ Run the following in the project's root directory. The root directory is where `
     ```
     $ npm start
     ```
-2. Install python modules  
+The next step is to setup the backend. The setup depends on which backend your team decided to use.
+- [Setup Firebase Backend](#setup-firebase-backend)
+- [Setup Python-Flask-Postgres Backend](#setup-python-flask-postgres-backend)
+
+# Setup Firebase Backend
+1. Get Firebase API Keys
+TODO
+
+# Setup Python-Flask-Postgres Backend
+1. Install python modules  
     ```
     $ pipenv install
     ```
@@ -74,3 +88,4 @@ Run the following in the project's root directory. The root directory is where `
     ```
     $ pipenv run flask run
     ```
+TODO
