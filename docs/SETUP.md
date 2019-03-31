@@ -75,7 +75,9 @@ The next step is to setup the backend. The setup instructions depends on which b
 - [Setup Python-Flask-Postgres Backend](#setup-python-flask-postgres-backend)
 
 # Setup Firebase Backend
-1. Get Firebase API Keys
+TODO
+1. Install Firebase Tools
+2. Get Firebase API Keys
 
 # Setup Python-Flask-Postgres Backend
 TODO

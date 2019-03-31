@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 python-dotenv = "*"
 yapf = "*"
+firebase-admin = "*"
 
 [requires]
 python_version = "3.7"
