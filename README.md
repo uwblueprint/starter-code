@@ -18,9 +18,9 @@ These technologies are proven, popular, easy to learn, and provide fast developm
 - Firebase
 
 ## Creating a Project using StarterCode
-[Creating a Project](docs/CREATING_A_PROJECT.md)
+- [Creating a Project](docs/CREATING_A_PROJECT.md)
 
 ## Get Started!
-[Setup](docs/SETUP.md)
-[Development](docs/DEVELOPMENT.md)
-[Deployment](docs/DEPLOYMENT.md)
+- [Setup](docs/SETUP.md)
+- [Development](docs/DEVELOPMENT.md)
+- [Deployment](docs/DEPLOYMENT.md)

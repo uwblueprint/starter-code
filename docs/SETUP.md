@@ -61,31 +61,21 @@
     ```
     $ cd <my-project>
     ```
-### Setup Frontend:
-Run the following in your project's root directory. The root directory should be where `Pipfile` and `package.json` are.
+### Setup the Frontend:
 9. Install node modules  
     ```
     $ npm install
     ```
-    You should now be able to start a frontend dev server
+10. Install python modules  
     ```
-    $ npm start
+    $ pipenv install
     ```
-The next step is to setup the backend. The setup depends on which backend your team decided to use.
+The next step is to setup the backend. The setup instructions depends on which backend your team decided to use.
 - [Setup Firebase Backend](#setup-firebase-backend)
 - [Setup Python-Flask-Postgres Backend](#setup-python-flask-postgres-backend)
 
 # Setup Firebase Backend
 1. Get Firebase API Keys
-TODO
 
 # Setup Python-Flask-Postgres Backend
-1. Install python modules  
-    ```
-    $ pipenv install
-    ```
-    You should now be able to start an api server
-    ```
-    $ pipenv run flask run
-    ```
 TODO
