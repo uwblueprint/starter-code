@@ -1,4 +1,4 @@
-# UWBlueprint Starter Code
+# UWBlueprint Starter-Code
 The starter code for UWBlueprint projects! Made with love by the project-infra team!
 
 ## Introduction
@@ -24,3 +24,11 @@ These technologies are proven, popular, easy to learn, and provide fast developm
 - [Setup](docs/SETUP.md)
 - [Development](docs/DEVELOPMENT.md)
 - [Deployment](docs/DEPLOYMENT.md)
+
+## Example Project
+The starter-code project shows how to build on top of the boilerplate code using 
+the following scenario:
+### Recycling Race!!!
+A local elementary school is running a recycling race between all of the classes! 
+Each class is fiercely competing to recycle the most items! They’ve asked UW 
+Blueprint to build an app that can help keep track of each class’ recycling progress.
