@@ -1,2 +1,4 @@
 def get_all_classroom_data():
-    return {}
+    return {
+        "Test": "Hello World"
+    }
