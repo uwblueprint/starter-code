@@ -25,7 +25,10 @@ it('transforms lowercase titles properly', () => {
   const teamName = "test2"
   ReactDOM.render(<Title teamName={teamName} />, div);
 
-  const expectedText = teamName.charAt(0).toUpperCase() + teamName.slice(1) + " Elementary's Recycling Race Progress Tracker:";
+  const expectedText =
+    teamName.charAt(0).toUpperCase() +
+    teamName.slice(1) + 
+    " Elementary's Recycling Race Progress Tracker:";
   assert.equal(div.textContent, expectedText, "Title did not get capitalized as expected.");
   ReactDOM.unmountComponentAtNode(div);
 });
