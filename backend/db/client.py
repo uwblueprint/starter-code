@@ -1,4 +1,4 @@
+from .models import RecycledMaterial
+
 def get_all_classroom_data():
-    return {
-        "Test": "Hello World"
-    }
+    return RecycledMaterial.query.all()
