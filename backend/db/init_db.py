@@ -41,6 +41,6 @@ def init_db(app, backend_store):
     if backend_store == 'firebase':
         _init_firestore_db()
     elif backend_store == 'flask':
-        return _init_postgres_db(app)
+        _init_postgres_db(app)
     else:
         print("Backend config error")
