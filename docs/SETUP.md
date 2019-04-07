@@ -41,7 +41,7 @@
     ```
     $ brew install pipenv
     ```
-6. Install PostgreSQL  
+6. Install PostgreSQL (only if you plan on using postgres)
     ```
     $ brew install postgres
     ```
@@ -81,3 +81,14 @@ TODO
 
 # Setup Python-Flask-Postgres Backend
 TODO
+1. Create the database
+    ```
+    $ psql
+    $ CREATE DATABASE startercode
+    ```
+2. Make sure the database is working
+    ```
+    $ cd <my-project>
+    $ pipenv shell
+    $ flask run
+    ```
