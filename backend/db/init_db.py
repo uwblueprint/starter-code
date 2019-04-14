@@ -2,6 +2,7 @@ import os
 
 from csv import reader
 
+
 def _get_data():
     filepath = os.path.join(os.getcwd(), 'backend/db/StarterCodeSampleData.csv')
     with open(filepath) as data:
@@ -19,7 +20,7 @@ def _init_postgres_db(app):
     from . import db
     from .models import RecycledMaterial
 
-    # Fixes a weird SQLAlchemy issue
+    # See http://flask-sqlalchemy.pocoo.org/latest/contexts/
     app.app_context().push()
     db.init_app(app)
 
