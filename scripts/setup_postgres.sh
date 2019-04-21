@@ -1,4 +1,15 @@
 #!/bin/bash
+
+# errexit. Any subsequent commands which fail will cause the
+#          shell script to exit immediately.
+set -e
+
+if [[ -z "${PROJECT_NAME}" ]]; then
+  echo "Environment variable PROJECT_NAME not found"
+  echo "For local development, are you running this script in pipenv?"
+  exit 1
+fi
+
 echo "Creating user database for $(whoami)"
 createdb $(whoami)
 echo
@@ -20,5 +31,3 @@ createdb "${db_name}"
 echo
 
 echo "Created user and database."
-
-
