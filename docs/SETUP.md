@@ -81,13 +81,17 @@ TODO
 2. Get Firebase API Keys
 
 # Setup Python-Flask-Postgres Backend
-TODO
-1. Create the database
+1. Install packages
+    ```
+    $ pip3 install flask_sqlalchemy
+    ```
+
+2. Create the database
     ```
     $ psql
     $ CREATE DATABASE startercode
     ```
-2. Make sure the database is working
+3. Make sure the database is working
     ```
     $ cd <my-project>
     $ pipenv shell
