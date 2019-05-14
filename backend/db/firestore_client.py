@@ -8,7 +8,7 @@ from firebase_admin import firestore
 class FirestoreClient:
   # The values for the config can be found in Firebase Settings
   def __init__(self):
-    # Generate a private key in Admin > Service accounts in the Firebase console
+    # Generate a private key in Admin > Service accounts in the Firebase console, then place in serviceAccountCredentials.json
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
     cred = credentials.Certificate(f"{dir_path}/config/serviceAccountCredentials.json")
