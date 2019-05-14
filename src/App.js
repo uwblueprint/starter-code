@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Define global imports here
+import React from 'react';
 
-class App extends Component {
+// Define relative imports here
+import Title from './components/Title';
+
+/**
+ * This class is the root component of your React App.
+ * All classes and components will be imported into the project when included in this class.
+ */
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <Title teamName="your_team_name" ></Title>
       </div>
     );
   }
