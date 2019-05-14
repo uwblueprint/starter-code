@@ -1,4 +1,7 @@
 import os
+import sys
+sys.path.append('..')
+sys.path.append('../..')
 
 from csv import reader
 
@@ -13,7 +16,10 @@ def _get_data():
 
 
 def _init_firestore_db():
-    pass
+    from backend.recycled_material import RecycledMaterial
+    rm = RecycledMaterial()
+
+    rm.write_to_firebase_from_csv("StarterCodeSampleData.csv")
 
 
 def _init_postgres_db(app):
