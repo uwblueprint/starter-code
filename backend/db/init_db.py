@@ -44,4 +44,4 @@ def init_db(app, backend_store):
     elif backend_store == 'flask':
         _init_postgres_db(app)
     else:
-        print("Backend config error")
+        print("Backend config error. Env variable BACKEND must be either 'firebase' or 'flask'.")

@@ -1,5 +1,5 @@
 from .models import RecycledMaterial
 
 
-def get_all_classroom_data():
+def get_all_recycling_data():
     return RecycledMaterial.query.all()
