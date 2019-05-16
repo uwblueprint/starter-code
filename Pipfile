@@ -11,6 +11,7 @@ python-dotenv = "*"
 yapf = "*"
 firebase-admin = "*"
 psycopg2-binary = "*"
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
