@@ -108,8 +108,9 @@ TODO
     $ pip3 install flask_sqlalchemy
     ```
 
-2. Enter the postgres terminal
+2. Start the postgres server, then enter the postgres terminal
     ```
+    $ pg_ctl -D /usr/local/var/postgres start
     $ psql postgres
     ```
 
