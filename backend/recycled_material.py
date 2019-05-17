@@ -1,5 +1,5 @@
 import csv
-from db.firestore_client import FirestoreClient
+from .db.firestore_client import FirestoreClient
 
 class RecycledMaterial:
     FIRESTORE_TABLE = 'recycled_material'

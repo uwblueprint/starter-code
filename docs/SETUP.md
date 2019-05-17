@@ -7,17 +7,17 @@
 - Pipenv, any version
 - PostgreSQL, version: `11.*`
 
-1. Install Homebrew  
-    Install Homebrew by following the instructions at <https://brew.sh/>  
+1. Install Homebrew
+    Install Homebrew by following the instructions at <https://brew.sh/>
     Once installed, you should be able to run `brew` on your terminal
     ```
     $ brew
     ```
-2. Install Git  
+2. Install Git
     ```
     $ brew install git
     ```
-3. Install NodeJS  
+3. Install NodeJS
     ```
     $ brew install node
     ```
@@ -28,7 +28,7 @@
     $ npm --version
     v6.4.1
     ```
-4. Install Python  
+4. Install Python
     ```
     $ brew install python
     ```
@@ -37,7 +37,7 @@
     $ python --version
     Python 3.7.2
     ```
-5. Install Pipenv  
+5. Install Pipenv
     ```
     $ brew install pipenv
     ```
@@ -54,20 +54,20 @@
     ```
 ### Clone your Project:
 This is the project created by your PL. See [Creating a Project](CREATING_A_PROJECT.md)
-7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.  
+7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.
     ```
     $ git clone https://github.com/uwblueprint/<my-project>.git
     ```
-8. Go into your project directory  
+8. Go into your project directory
     ```
     $ cd <my-project>
     ```
 ### Setup the Frontend:
-9. Install node modules  
+9. Install node modules
     ```
     $ npm install
     ```
-10. Install python modules  
+10. Install python modules
     ```
     $ pipenv install
     ```
@@ -77,8 +77,30 @@ The next step is to setup the backend. The setup instructions depends on which b
 
 # Setup Firebase Backend
 TODO
-1. Install Firebase Tools
-2. Get Firebase API Keys
+1. Install packages
+    ```
+    pip3 install firebase_admin
+    ```
+
+2. Generate Firebase API key
+    If there is already an existing API key, please ask whoever owns it to give it to you (not through git). In the future, we will figure out a better way of doing this. Otherwise, you need to generate a new Firebase API key:
+
+    a. Go to the [Firebase console](https://console.firebase.google.com/u/1/project/startercode-98c1c/)
+    b. Click on Settings > Service accounts > Generate new private key
+    c. Share it with everyone that needs the private key.
+
+3. Place in starter-code repository
+
+    Copy the contents into `backend/db/config/serviceAccountCredentials.json`
+
+4. Start the Flask application and make sure the database is working
+    ```
+    $ cd <my-project>
+    $ pipenv shell
+    $ flask run
+    ```
+    In the firebase console, click on Database > Cloud Firestore.
+
 
 # Setup Python-Flask-Postgres Backend
 1. Install packages
@@ -86,12 +108,17 @@ TODO
     $ pip3 install flask_sqlalchemy
     ```
 
-2. Create the database
+2. Enter the postgres terminal
     ```
-    $ psql
-    $ CREATE DATABASE startercode
+    $ psql postgres
     ```
-3. Make sure the database is working
+
+3. Create the database
+    ```
+    postgres=# CREATE DATABASE startercode;
+    ```
+
+4. Start the Flask application and make sure the database is working
     ```
     $ cd <my-project>
     $ pipenv shell

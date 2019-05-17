@@ -19,7 +19,7 @@ def _init_firestore_db():
     from backend.recycled_material import RecycledMaterial
     rm = RecycledMaterial()
 
-    rm.write_to_firebase_from_csv("StarterCodeSampleData.csv")
+    rm.write_to_firebase_from_csv("backend/db/StarterCodeSampleData.csv")
 
 
 def _init_postgres_db(app):
