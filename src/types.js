@@ -2,4 +2,6 @@
  * Use this file to enumerate action types
  * and import it in the relevant actions and reducers.
  */
-export const SIMPLE_ACTION = "simple_action"  // TODO: make custom action that does something
+
+export const LOAD_DATA = "load_data";
+export const CLEAR_DATA = "clear_data";
