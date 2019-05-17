@@ -3,3 +3,4 @@
  * Use this index file to export all action types
  */
 export * from './simpleType';
+export * from './dataType';

@@ -3,3 +3,4 @@
  * Use this index file to export all actions
  */
 export * from "./simpleAction";
+export * from './dataActions';

@@ -3,6 +3,7 @@ import React from 'react';
 
 // Define relative imports here
 import Title from './components/Title';
+import DisplayContainer from './components/DisplayContainer';
 
 /**
  * This class is the root component of your React App.
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
           <Title teamName="your_team_name" ></Title>
+          <DisplayContainer />
       </div>
     );
   }
