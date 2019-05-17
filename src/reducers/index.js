@@ -3,10 +3,8 @@
  * Use this index file to export all reducers
  */
 import { combineReducers } from 'redux';
-import simpleReducer from './simpleReducer';
 import dataReducer from './dataReducer';
 
 export default combineReducers({
-  simpleReducer,
   dataReducer
 });

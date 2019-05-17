@@ -3,15 +3,23 @@ import PropTypes from 'prop-types';
 
 import './BasicTable.scss';
 
+/**
+ * "Get" specifies a generic return
+ * @param {*} object data element; see typing in the PropTypes
+ */
 const getTableHeaders = (object = {}) => {
   return Object.keys(object);
 }
 
-const generateRows = (row = {}) => {
+/**
+ * "render" specifies JSX in the return 
+ * @param {*} row data element
+ */
+const renderRows = (row = {}) => {
   return (
-    <tr>
+    <tr key={row.id}>
       {Object.values(row).map(
-        value => <td>{value}</td>
+        (value, i) => <td key={i}>{value}</td>
       )}
     </tr>
   )
@@ -20,18 +28,23 @@ const generateRows = (row = {}) => {
 const BasicTable = ({ data }) => {
   return (
     <table className="basic-table">
-      <tr>
-        {getTableHeaders(data[0]).map(
-          headerName => <th>{headerName}</th>
-        )}
-      </tr>
-      {data.map(generateRows)}
+      <tbody>
+        <tr>
+          {getTableHeaders(data[0]).map(
+            headerName => <th key={headerName}>{headerName}</th>
+            )}
+        </tr>
+        {data.map(renderRows)}
+      </tbody>
     </table>
   )
 }
 
 export default BasicTable;
 
+/**
+ * Much more substantial example of typing properties. If the data does not align to the type, an error will occur.
+ */
 BasicTable.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

@@ -5,20 +5,28 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 
-import { simpleAction, loadData, clearData } from '../actions';
+import { loadData, clearData } from '../actions';
 import Display from './Display';
 
+/**
+ * This maps the data stored in the store as props passed into the component
+ * @param {*} store the redux store
+ */
 const mapStateToProps = store => {
   return {
-    storeData: store.dataReducer.result
+    storeData: store.dataReducer.data
   }
 };
 
+/**
+ * This wraps all specified actions with dispatch (a special function which dispatches the actions to the store)
+ * as props passed into the component
+ * @param {*} dispatch func
+ */
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     { 
       // add other actions here
-      simpleAction,
       loadData,
       clearData
     },
