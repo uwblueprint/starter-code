@@ -76,24 +76,29 @@ The next step is to setup the backend. The setup instructions depends on which b
 - [Setup Python-Flask-Postgres Backend](#setup-python-flask-postgres-backend)
 
 # Setup Firebase Backend
-TODO
 1. Install packages
     ```
     pip3 install firebase_admin
     ```
 
-2. Generate Firebase API key
+2. Create a Firebase project
+
+    a. Go to the [web Firebase console](https://console.firebase.google.com) and create a new project. 
+    
+    b. Click on Settings > Users and permissions, then add everyone on your team as a user.
+
+3. Generate Firebase API key
     If there is already an existing API key, please ask whoever owns it to give it to you (not through git). In the future, we will figure out a better way of doing this. Otherwise, you need to generate a new Firebase API key:
 
     a. Go to the [Firebase console](https://console.firebase.google.com/u/1/project/startercode-98c1c/)
     b. Click on Settings > Service accounts > Generate new private key
     c. Share it with everyone that needs the private key.
 
-3. Place in starter-code repository
+4. Place in starter-code repository
 
     Copy the contents into `backend/db/config/serviceAccountCredentials.json`
 
-4. Start the Flask application and make sure the database is working
+5. Start the Flask application and make sure the database is working
     ```
     $ cd <my-project>
     $ pipenv shell
