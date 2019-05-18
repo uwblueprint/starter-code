@@ -16,6 +16,18 @@ const sumCollected = (object = {}) => {
     return sum;
 }
 
+const findLeader = (object = {}) => {
+    let max = 0;
+    let teacher = "";
+    for (const [ key, value ] of Object.entries(sumCollected(object))){
+        if (value > max){
+            max = value;
+            teacher = key;
+        }
+    }
+    return(teacher + ": " + max + " items collected.")
+}
+
 export default Leader;
 
 Leader.defaultProps = {
