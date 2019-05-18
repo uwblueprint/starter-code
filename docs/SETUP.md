@@ -82,9 +82,8 @@ The next step is to setup the backend. The setup instructions depends on which b
     ```
 
 2. Create a Firebase project
+    a. Go to the [web Firebase console](https://console.firebase.google.com) and create a new project.
 
-    a. Go to the [web Firebase console](https://console.firebase.google.com) and create a new project. 
-    
     b. Click on Settings > Users and permissions, then add everyone on your team as a user.
 
 3. Generate Firebase API key
@@ -100,9 +99,8 @@ The next step is to setup the backend. The setup instructions depends on which b
 
 5. Start the Flask application and make sure the database is working
     ```
-    $ cd <my-project>
-    $ pipenv shell
-    $ flask run
+    $ cd <my-project>/backend
+    $ python init_firestore_db.py
     ```
     In the firebase console, click on Database > Cloud Firestore.
 
