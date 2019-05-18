@@ -8,8 +8,20 @@ import Paper from '@material-ui/core/Paper';
 import BasicTable from './BasicTable';
 import firebase from 'firebase';
 import 'firebase/firestore';
-
+import Modal from 'react-modal';
 import Leaderboard from './Leaderboard';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 
 class Display extends React.Component {
   constructor(props) {
@@ -188,7 +200,9 @@ class Display extends React.Component {
     console.log(this.state.data);
     console.log(this.state.columns);
     return (
-      <div className="display-container">
+      <div className="container">
+          
+          <h1> Bear's Recycling Race Progress Tracker </h1>
         
         <div style={{ maxWidth: '100%' }}>
         <MaterialTable
@@ -236,6 +250,30 @@ class Display extends React.Component {
           data={data}
           title="Recycled Material"
         />
+      </div>
+      
+      <div>
+          <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+              contentLabel="Add User"
+              >
+              <form onSubmit={this.handleSubmit}>
+                  {
+                    columns.map((elem, index) => // for each element in the Roles array,
+                      <div>
+                      <p> {elem.title} </p>
+                      <button title={elem.title}  />
+                  </div>
+                    )
+                }  
+            
+            <input type="submit" value="Submit" />
+            </form>
+              
+          </Modal>
       </div>
 
       { Object.entries(this.state.dataFirebase).length !== 0 && <Leaderboard data={this.state.dataFirebase} /> }
