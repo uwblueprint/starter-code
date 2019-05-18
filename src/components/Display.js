@@ -67,37 +67,22 @@ class Display extends React.Component {
       .catch(e => {
         console.error("something went wrong", e)
       })
-      
-      
-     var entry = fdb.collection('recycled_material');
-
-     var material = entry.doc('Greg').set({
-        aluminum: 23,
-        batteries: 97,
-        bottles: 45,
-        cans: 24,
-        cardboard: 23,
-        computer_parts: 13,
-        glass: 93,
-        paper: 78,
-        wood: 44,
-    });
   }
   
   handleDataChange = () => {
       
   }
   // Calculate score for a class
-  calculateScore = (classTeacher, db)  => {
-    var aluminumPts = parseInt(db[classTeacher].aluminum) * 350 
-    var batteryPts = parseInt(db[classTeacher].batteries) * 100
-    var bottlePts = parseInt(db[classTeacher].bottles) * 450 
-    var canPts = parseInt(db[classTeacher].cans) * 350 
-    var carboardPts = parseInt(db[classTeacher].cardboard) * 0.25 
-    var compterPts = parseInt(db[classTeacher].computer_parts) * 350
-    var glassPts = parseInt(db[classTeacher].glass) * 1000000 
-    var paperPts = parseInt(db[classTeacher].paper) * 0.083
-    var woodPts = parseInt(db[classTeacher].wood) * 13
+  calculateScore = (newData)  => {
+    var aluminumPts = parseInt(newData.Aluminum) * 350 
+    var batteryPts = parseInt(newData.Batteries) * 100
+    var bottlePts = parseInt(newData.Bottles) * 450 
+    var canPts = parseInt(newData.Cans) * 350 
+    var carboardPts = parseInt(newData.CardBoard) * 0.25 
+    var compterPts = parseInt(newData.ComputerParts) * 350
+    var glassPts = parseInt(newData.Glass) * 1000000 
+    var paperPts = parseInt(newData.Paper) * 0.083
+    var woodPts = parseInt(newData.Wood) * 13
     var score = aluminumPts + batteryPts + bottlePts + canPts + carboardPts + compterPts + glassPts + paperPts + woodPts
     return score
   }
@@ -205,6 +190,46 @@ class Display extends React.Component {
         
         <div style={{ maxWidth: '100%' }}>
         <MaterialTable
+        editable={{
+          isEditable: () => true,
+            onRowUpdate: async (newData, oldData) => {
+
+              this.calculateScore(newData)
+              
+              const fdb = firebase.firestore();
+              var entry = fdb.collection('recycled_material');
+
+              var material = entry.doc(newData.Name).set({
+                  aluminum: newData.Aluminum,
+                  batteries: newData.Batteries,
+                  bottles: newData.Bottles,
+                  cans: newData.Cans,
+                  cardboard: newData.CardBoard,
+                  computer_parts: newData.ComputerParts,
+                  glass: newData.Glass,
+                  paper: newData.Paper,
+                  wood: newData.Wood,
+                  score: this.calculateScore(newData)
+              });
+              this.setState(state => ({
+                dataFirebase: {
+                  ...state.dataFirebase,
+                  [newData.Name]: {
+                    aluminum: newData.Aluminum,
+                    batteries: newData.Batteries,
+                    bottles: newData.Bottles,
+                    cans: newData.Cans,
+                    cardboard: newData.CardBoard,
+                    computer_parts: newData.ComputerParts,
+                    glass: newData.Glass,
+                    paper: newData.Paper,
+                    wood: newData.Wood,
+                    score: this.calculateScore(newData)
+                  },
+                }
+              }))
+              }
+          }}
           columns={columns}
           data={data}
           title="Recycled Material"
