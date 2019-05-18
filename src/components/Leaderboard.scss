@@ -1,0 +1,47 @@
+.leaderboard-title {
+    font-size: 2em;
+    margin: 1em 0;
+}
+
+.leaderboard-header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.leaderboard-header-item {
+    cursor: pointer;
+    padding: 1em;
+    margin: 0.5em 1em;
+    background-color: antiquewhite;
+    border-radius: 1em;
+}
+
+.selected {
+    color: white;
+    background-color: rgb(94, 83, 69);
+}
+
+.leaderboard-content {
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: baseline;
+    width: 250px;
+}
+
+.leaderboard-item-place {
+    font-size: 2em;
+    text-align: center;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.leaderboard-expand-collapse {
+    cursor: pointer;
+    color: #00a6e7;
+}
