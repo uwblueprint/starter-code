@@ -25,7 +25,7 @@ const findLeader = (object = {}) => {
             teacher = key;
         }
     }
-    return(teacher + ": " + max + " items collected.")
+    return(teacher + ": " + max + " landfill years saved.")
 }
 
 const Leader = ({ data }) => {
