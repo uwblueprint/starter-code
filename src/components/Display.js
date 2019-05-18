@@ -49,8 +49,8 @@ class Display extends React.Component {
    * It will fire when the component has been mounted onto the DOM tree.
    */
   componentDidMount() {
-    //this.fetchData();
-    this.fetchDataFirebase();
+    this.fetchData();
+    // this.fetchDataFirebase();
   }
 
   render() {
