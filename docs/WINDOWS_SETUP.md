@@ -39,10 +39,22 @@
     ```
     Pip should have been included in the python install
 6. Install PostgreSQL  
-    Go to
-    https://www.postgresql.org/download/windows/
-
+    Go to https://www.postgresql.org/download/windows/
+    
     Download the 11.* version
+
+    Make note of the user and password you setup; this will be used later.
+    
+7. Add psql bin directory to your path variable.
+    Search for edit system environment variables
+
+    Click the [Environment variables...] button
+
+    Double click on the "Path" row
+
+    In the dialog that opens press the [New] button and browse to your postgres bin directory; 
+
+    It should look like "C:\Program Files\PostgreSQL\11\bin" unless you installed it somewhere different.
 
 ### Clone the Project:
 7. Use git bash to clone the code for your project onto your computer. Replace `<my-project>` with the name of your project.  
@@ -76,8 +88,16 @@ TODO
 2. Get Firebase API Keys
 
 # Setup Python-Flask-Postgres Backend
-1. Check your postgres service
+TODO FLASK SETUP INSTRUCTIONS
+1. Check your postgres service is running
     * [Windows key] + R and search for services.msc
     * Make sure `postgresql-x64-11` is running
 
-TODO 
+2. Create postgres database
+    * Open command prompt
+    * Use >psql -U "[the username you set up earlier]" and enter your password to enter the postgres console
+    * Create a database 
+        ```
+        CREATE DATABASE [Database_name]
+        ```
+
