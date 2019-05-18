@@ -28,6 +28,13 @@ const findLeader = (object = {}) => {
     return(teacher + ": " + max + " items collected.")
 }
 
+const Leader = ({ data }) => {
+  return (
+      //list the max and teacher
+      <p>{findLeader(data)}</p>
+  )
+}
+
 export default Leader;
 
 Leader.defaultProps = {
