@@ -28,7 +28,7 @@ class Display extends React.Component {
 
   fetchDataFirebase = () => {
     const fdb = firebase.firestore();
-    fdb
+    return fdb
       .collection("recycled_material")
       .get()
       .then(snapshot => {
@@ -43,14 +43,30 @@ class Display extends React.Component {
         console.error("something went wrong", e)
       })
   }
+  // Calculate score for a class
+  calculateScore = (classTeacher) => {
+    var aluminumPts = parseInt(this.state.dataFirebase[classTeacher].aluminum) * 350 
+    var batteryPts = parseInt(this.state.dataFirebase[classTeacher].batteries) * 100
+    var bottlePts = parseInt(this.state.dataFirebase[classTeacher].bottles) * 450 
+    var canPts = parseInt(this.state.dataFirebase[classTeacher].cans) * 350 
+    var carboardPts = parseInt(this.state.dataFirebase[classTeacher].cardboard) * 0.25 
+    var compterPts = parseInt(this.state.dataFirebase[classTeacher].computer_parts) * 350
+    var glassPts = parseInt(this.state.dataFirebase[classTeacher].glass) * 1000000 
+    var paperPts = parseInt(this.state.dataFirebase[classTeacher].paper) * 0.083
+    var woodPts = parseInt(this.state.dataFirebase[classTeacher].wood) * 13
+
+    return aluminumPts + batteryPts + bottlePts + canPts + carboardPts + compterPts + glassPts + paperPts + woodPts
+  }
+  
 
   /**
    * This is a React Component Lifecycle method. 
    * It will fire when the component has been mounted onto the DOM tree.
    */
-  componentDidMount() {
+  async componentDidMount() {
     //this.fetchData();
-    this.fetchDataFirebase();
+    await this.fetchDataFirebase();
+    this.calculateScore("Mr. Evans");
   }
 
   render() {
@@ -65,6 +81,10 @@ class Display extends React.Component {
           Object.entries(this.state.dataFirebase).length === 0
             ? "**Firebase not set up**"
             : JSON.stringify(this.state.dataFirebase, null, 2)
+        }
+        <h2>Mr. Evans Class Score</h2>
+        {
+          Object.entries(this.state.dataFirebase).length != 0 && JSON.stringify(this.calculateScore("Mr. Evans"))
         }
       </div>
     )
