@@ -14,7 +14,6 @@ const Title = ({ teamName }) => {
   return (
     <div className="title">
       <h1 className="container">
-        {teamName.charAt(0).toUpperCase() + teamName.slice(1)} Elementary's Recycling Race Progress Tracker:
       </h1>
     </div>
   )
