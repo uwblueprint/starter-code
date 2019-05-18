@@ -13,17 +13,9 @@ import './index.css';
 // Instructions here: https://firebase.google.com/docs/web/setup
 // Then uncomment the block below.
 //
-const firebaseConfig = {
-    apiKey: "AIzaSyBuSkWvqGl_vDztvccY8hTA7QLQqTASkDU",
-    authDomain: "blueprint-bootcamp.firebaseapp.com",
-    databaseURL: "https://blueprint-bootcamp.firebaseio.com",
-    projectId: "blueprint-bootcamp",
-    storageBucket: "blueprint-bootcamp.appspot.com",
-    messagingSenderId: "194644073596",
-    appId: "1:194644073596:web:516dfddfe569e97c"
-};
+// const firebaseConfig = {}
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
 /**
  * While App.js is the root of your React App, index.js is the root of your frontend.
