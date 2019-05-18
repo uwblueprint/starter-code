@@ -8,15 +8,14 @@
 - PostgreSQL, version: `11.*`
 
 2. Install Git  
-    Go to
-    https://gitforwindows.org/
+    * Go to https://gitforwindows.org/
 
-    During the installation, select "Checkout Windows-style, commit Unix-style line endings"
+    * During the installation, select "Checkout Windows-style, commit Unix-style line endings"
 
 3. Install NodeJS  
 
-    https://nodejs.org/en/download/
-    Ensure you've installed the correct version; inside your git bash run the following commands
+    * Go to https://nodejs.org/en/download/
+    * Ensure you've installed the correct version; open your git bash terminal and run the following commands
     ```
     $ node --version
     v10.15.2
@@ -25,36 +24,38 @@
     ```
 4. Install Python  
 
-    https://www.python.org/downloads/release/python-373/
+    * Go to https://www.python.org/downloads/release/python-373/
     
-    Install `Windows x86-64 executable installer` if your OS is 64-bit
+    * Install `Windows x86-64 executable installer` if your OS is 64-bit
+
+    * Ensure you have the correct version
     ```
     $ python --version
     Python 3.7.2
     ```
 5. Install Pipenv  
-    Open Windows Powershell and run the following command
+    * Open Windows Powershell and run the following command
     ```
     pip install pipenv
     ```
-    Pip should have been included in the python install
+    Pip is included in the python install
 6. Install PostgreSQL  
-    Go to https://www.postgresql.org/download/windows/
+    * Go to https://www.postgresql.org/download/windows/
     
-    Download the 11.* version
+    * Download the 11.* version
 
-    Make note of the user and password you setup; this will be used later.
+    * Make note of the user and password you setup; this will be used later.
     
 7. Add psql bin directory to your path variable.
-    Search for edit system environment variables
+    * Search for edit system environment variables
 
-    Click the [Environment variables...] button
+    * Click the [Environment variables...] button
 
-    Double click on the "Path" row
+    * Double click on the "Path" row
 
-    In the dialog that opens press the [New] button and browse to your postgres bin directory; 
+    * In the dialog that opens press the [New] button and browse to your postgres bin directory; 
 
-    It should look like "C:\Program Files\PostgreSQL\11\bin" unless you installed it somewhere different.
+    * It should look like "C:\Program Files\PostgreSQL\11\bin" unless you installed it somewhere different.
 
 ### Clone the Project:
 7. Use git bash to clone the code for your project onto your computer. Replace `<my-project>` with the name of your project.  
