@@ -41,7 +41,7 @@
     ```
     $ brew install pipenv
     ```
-6. Install PostgreSQL  
+6. Install PostgreSQL (only if you plan on using postgres)
     ```
     $ brew install postgres
     ```
@@ -53,6 +53,7 @@
     psql (PostgreSQL) 11.2
     ```
 ### Clone your Project:
+This is the project created by your PL. See [Creating a Project](CREATING_A_PROJECT.md)
 7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.  
     ```
     $ git clone https://github.com/uwblueprint/<my-project>.git
@@ -81,3 +82,14 @@ TODO
 
 # Setup Python-Flask-Postgres Backend
 TODO
+1. Create the database
+    ```
+    $ psql
+    $ CREATE DATABASE startercode
+    ```
+2. Make sure the database is working
+    ```
+    $ cd <my-project>
+    $ pipenv shell
+    $ flask run
+    ```

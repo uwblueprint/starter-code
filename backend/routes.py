@@ -1,12 +1,12 @@
 from flask import Blueprint
 from flask import jsonify
 
-import backend.db.client as db_client
+from .db import client as db_client
 
 blueprint = Blueprint('api', __name__)
 
 
-@blueprint.route('/classrooms')
-def classrooms():
-    return jsonify(db_client.get_all_classroom_data())
-    
+@blueprint.route('/recycling-data')
+def get_recycling_data():
+    data = [row.to_dict() for row in db_client.get_all_classroom_data()]
+    return jsonify(data)
