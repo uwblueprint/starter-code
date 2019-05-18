@@ -15,13 +15,6 @@ def _get_data():
         return [zip(header, row) for row in csv_reader]
 
 
-def _init_firestore_db():
-    from backend.recycled_material import RecycledMaterial
-    rm = RecycledMaterial()
-
-    rm.write_to_firebase_from_csv("backend/db/StarterCodeSampleData.csv")
-
-
 def _init_postgres_db(app):
     from . import db
     from .models import RecycledMaterial
@@ -45,9 +38,4 @@ def _init_postgres_db(app):
 
 
 def init_db(app, backend_store):
-    if backend_store == 'firebase':
-        _init_firestore_db()
-    elif backend_store == 'flask':
-        _init_postgres_db(app)
-    else:
-        print("Backend config error. Env variable BACKEND must be either 'firebase' or 'flask'.")
+    _init_postgres_db(app)
