@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "startercode-98c1c"
+    "default": "startercode-98c1c",
+    "blueprint": "blueprint-bootcamp"
   }
 }
