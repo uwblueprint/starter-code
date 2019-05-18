@@ -9,7 +9,7 @@ import BasicTable from './BasicTable';
 import firebase from 'firebase';
 import 'firebase/firestore';
 import Modal from 'react-modal';
-
+import Leaderboard from './Leaderboard';
 
 const customStyles = {
   content : {
@@ -22,6 +22,7 @@ const customStyles = {
   }
 };
 
+
 class Display extends React.Component {
   constructor(props) {
     super(props);
@@ -33,6 +34,27 @@ class Display extends React.Component {
     };
   }
   
+  commitChanges({ added, changed, deleted }) {
+    let { rows } = this.state;
+    if (added) {
+      const startingAddedId = rows.length > 0 ? rows[rows.length - 1].id + 1 : 0;
+      rows = [
+        ...rows,
+        ...added.map((row, index) => ({
+          id: startingAddedId + index,
+          ...row,
+        })),
+      ];
+    }
+    if (changed) {
+      rows = rows.map(row => (changed[row.id] ? { ...row, ...changed[row.id] } : row));
+    }
+    if (deleted) {
+      const deletedSet = new Set(deleted);
+      rows = rows.filter(row => !deletedSet.has(row.id));
+    }
+    this.setState({ rows });
+  }
 
   fetchData = () => {
     fetch('/recycling-data')
@@ -136,15 +158,7 @@ class Display extends React.Component {
       this.setState({data: data});
       this.setState({colums: columns});
   }
-  
-  handleChange = () => {
-      
-  }
-  
-  addUser = () => {
-      console.log("User Added");
-      this.setState({modalIsOpen: true})
-  }
+
   render() {
       
     var data = []
@@ -169,7 +183,7 @@ class Display extends React.Component {
           
       }
       
-    let columns = [
+      let columns = [
         { title: 'Name', field: 'Name' },
         { title: 'Cans', field: 'Cans' },
         { title: 'Bottles', field: 'Bottles' },
@@ -180,71 +194,62 @@ class Display extends React.Component {
         { title: 'Wood', field: 'Wood' },
         { title: 'ComputerParts', field: 'ComputerParts' },
         { title: 'Paper', field: 'Paper' },
+        
     ]
     
     console.log(this.state.data);
     console.log(this.state.columns);
     return (
-      <div className="container">
-          
-        <h1 className="title"> Bears Recycling Race Progress Tracker </h1>
+      <div className="display-container">
         
-        <div className="table">
+        <div style={{ maxWidth: '100%' }}>
         <MaterialTable
-            actions={[
-            {
-                icon: 'add',
-                tooltip: 'Add User',
-                isFreeAction: true,
-                onClick: this.addUser
-            }
-            ]}
-            editable={{
-              isEditable: () => true,
-                onRowUpdate: async (newData, oldData) => {
+        editable={{
+          isEditable: () => true,
+            onRowUpdate: async (newData, oldData) => {
 
-                  this.calculateScore(newData)
-                  
-                  const fdb = firebase.firestore();
-                  var entry = fdb.collection('recycled_material');
+              this.calculateScore(newData)
+              
+              const fdb = firebase.firestore();
+              var entry = fdb.collection('recycled_material');
 
-                  var material = entry.doc(newData.Name).set({
-                      aluminum: newData.Aluminum,
-                      batteries: newData.Batteries,
-                      bottles: newData.Bottles,
-                      cans: newData.Cans,
-                      cardboard: newData.CardBoard,
-                      computer_parts: newData.ComputerParts,
-                      glass: newData.Glass,
-                      paper: newData.Paper,
-                      wood: newData.Wood,
-                      score: this.calculateScore(newData)
-                  });
-                  this.setState(state => ({
-                    dataFirebase: {
-                      ...state.dataFirebase,
-                      [newData.Name]: {
-                        aluminum: newData.Aluminum,
-                        batteries: newData.Batteries,
-                        bottles: newData.Bottles,
-                        cans: newData.Cans,
-                        cardboard: newData.CardBoard,
-                        computer_parts: newData.ComputerParts,
-                        glass: newData.Glass,
-                        paper: newData.Paper,
-                        wood: newData.Wood,
-                        score: this.calculateScore(newData)
-                      },
-                    }
-                  }))
-                  }
-              }}
-
+              var material = entry.doc(newData.Name).set({
+                  aluminum: newData.Aluminum,
+                  batteries: newData.Batteries,
+                  bottles: newData.Bottles,
+                  cans: newData.Cans,
+                  cardboard: newData.CardBoard,
+                  computer_parts: newData.ComputerParts,
+                  glass: newData.Glass,
+                  paper: newData.Paper,
+                  wood: newData.Wood,
+                  score: this.calculateScore(newData)
+              });
+              this.setState(state => ({
+                dataFirebase: {
+                  ...state.dataFirebase,
+                  [newData.Name]: {
+                    aluminum: newData.Aluminum,
+                    batteries: newData.Batteries,
+                    bottles: newData.Bottles,
+                    cans: newData.Cans,
+                    cardboard: newData.CardBoard,
+                    computer_parts: newData.ComputerParts,
+                    glass: newData.Glass,
+                    paper: newData.Paper,
+                    wood: newData.Wood,
+                    score: this.calculateScore(newData)
+                  },
+                }
+              }))
+              }
+          }}
           columns={columns}
           data={data}
           title="Recycled Material"
         />
       </div>
+      
       <div>
           <Modal
               isOpen={this.state.modalIsOpen}
@@ -268,6 +273,8 @@ class Display extends React.Component {
               
           </Modal>
       </div>
+
+      { Object.entries(this.state.dataFirebase).length !== 0 && <Leaderboard data={this.state.dataFirebase} /> }
       </div>
     )
   }
