@@ -9,6 +9,8 @@ import BasicTable from './BasicTable';
 import firebase from 'firebase';
 import 'firebase/firestore';
 
+import Leaderboard from './Leaderboard';
+
 class Display extends React.Component {
   constructor(props) {
     super(props);
@@ -196,7 +198,8 @@ class Display extends React.Component {
           title="Recycled Material"
         />
       </div>
-    
+
+      { Object.entries(this.state.dataFirebase).length !== 0 && <Leaderboard data={this.state.dataFirebase} /> }
       </div>
     )
   }
