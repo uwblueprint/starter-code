@@ -200,7 +200,9 @@ class Display extends React.Component {
     console.log(this.state.data);
     console.log(this.state.columns);
     return (
-      <div className="display-container">
+      <div className="container">
+          
+          <h1> Bear's Recycling Race Progress Tracker </h1>
         
         <div style={{ maxWidth: '100%' }}>
         <MaterialTable
