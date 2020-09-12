@@ -53,7 +53,9 @@
     psql (PostgreSQL) 11.2
     ```
 ### Clone your Project:
-This is the project created by the leader of your bootcamp team. See [Creating a Project](CREATING_A_PROJECT.md)
+This is the project created by your PL. See [Creating a Project](CREATING_A_PROJECT.md)
+
+For the purposes of bootcamp, you want to clone the `starter-code` repo i.e. the name of the project is `starter-code`. 
 
 7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.
     ```
