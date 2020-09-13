@@ -131,11 +131,18 @@ The next step is to setup the backend. The setup instructions depends on which b
     $ pip3 install flask_sqlalchemy
     ```
 
-2. Start the postgres server, then enter the postgres terminal
+2. Start the postgres server, then enter the postgres terminal.
     ```
     $ pg_ctl -D /usr/local/var/postgres start
     $ psql postgres
     ```
+    
+    If you run into an error saying `The data directory was initialized by PostgreSQL version 10, which is not compatible with this version 12.4.`, then you need to migrate your old postgres data. You can run 
+    ```
+    mv /usr/local/var/postgres /usr/local/var/postgres.old
+    ```
+    
+    Give it another try after that. 
 
 3. Create the database
     ```
