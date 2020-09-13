@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-          <Title teamName="your_team_name" ></Title>
+          <Title teamName="Shrek" ></Title>
           <DisplayContainer />
       </div>
     );
