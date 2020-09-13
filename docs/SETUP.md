@@ -94,19 +94,36 @@ The next step is to setup the backend. The setup instructions depends on which b
 
     a. Go to the [Firebase console](https://console.firebase.google.com/u/1/project/startercode-98c1c/)
     b. Click on Settings > Service accounts > Generate new private key
-    c. Share it with everyone that needs the private key.
+    c. Share it with everyone that needs the private key. You can share this on Discord, although we probably should have better practices for sharing secrets.
 
 4. Place in starter-code repository
 
-    Copy the contents into `backend/db/config/serviceAccountCredentials.json`
+    Create a config directory for the database.
+    ```
+    cd backend/db
+    mkdir config
+    cd config
+    touch serviceAccountCredentials.json
+    ```
+
+    Copy the contents into `backend/db/config/serviceAccountCredentials.json`.
 
 5. Start the Flask application and make sure the database is working
     ```
     $ cd <my-project>/backend
-    $ python init_firestore_db.py
+    $ python3 init_firestore_db.py
     ```
-    In the firebase console, click on Database > Cloud Firestore.
+    In the firebase console, click on Database > Cloud Firestore. Verify that test data was created until the collection `recycled_material`. 
 
+6. Set-up the frontend.
+
+    a. Go to `src/index.js` and put in the firebase config. Instructions for how to get the config can be found [here](https://support.google.com/firebase/answer/7015592). 
+    
+    b. In `src/index.js`, uncomment the line `firebase.initializeApp(firebaseConfig);`
+    
+    c. In `/src/components/Display.js`, uncomment the line `this.fetchDataFirebase();`.
+    
+7. Congrats, you should be done. You can now run `npm start` in the `starter-code` directory and check out your app at `http://localhost:3000`. You should see a json blob of recycling data identical to what was in your Firestore database. 
 
 # Setup Python-Flask-Postgres Backend
 1. Install packages
@@ -124,10 +141,14 @@ The next step is to setup the backend. The setup instructions depends on which b
     ```
     postgres=# CREATE DATABASE startercode;
     ```
+    
+    Then, exit the postgres shell.
 
-4. Start the Flask application and make sure the database is working
+4. Start the Flask application
     ```
     $ cd <my-project>
     $ pipenv shell
     $ flask run
     ```
+5. Your API server should now be running, You can now run `npm start` in the `starter-code` directory and check out your app at `http://localhost:3000`. You should see two tables with recycling data. 
+5. 
