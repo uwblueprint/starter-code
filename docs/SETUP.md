@@ -150,5 +150,4 @@ The next step is to setup the backend. The setup instructions depends on which b
     $ pipenv shell
     $ flask run
     ```
-5. Your API server should now be running, You can now run `npm start` in the `starter-code` directory and check out your app at `http://localhost:3000`. You should see two tables with recycling data. 
-5. 
+5. Your API server should now be running, You can now run `npm start` in the `starter-code` directory and check out your app at `http://localhost:3000`. You should see two tables with recycling data.  
