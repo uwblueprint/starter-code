@@ -53,13 +53,13 @@
     psql (PostgreSQL) 11.2
     ```
 ### Clone your Project:
-This is the project created by your PL. See [Creating a Project](CREATING_A_PROJECT.md)
+If you're using `starter-code` as a base for a new project, see [Creating a Project](CREATING_A_PROJECT.md). You'll want to replace instances of `starter-code` with the name of your project.
 
-For the purposes of bootcamp, you want to clone the `starter-code` repo i.e. the name of the project is `starter-code`. 
+If you're attending Blueprint bootcamp, read on
 
-7. Get the code for your project onto your computer. Replace `<my-project>` with the name of your project.
+7. Get the code for the `starter-code` repository onto your computer.
     ```
-    $ git clone https://github.com/uwblueprint/<my-project>.git
+    $ git clone https://github.com/uwblueprint/starter-code.git
     ```
 8. Go into your project directory
     ```
