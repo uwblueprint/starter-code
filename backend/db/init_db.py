@@ -37,5 +37,5 @@ def _init_postgres_db(app):
     db.session.commit()
 
 
-def init_db(app, backend_store):
+def init_db(app):
     _init_postgres_db(app)
