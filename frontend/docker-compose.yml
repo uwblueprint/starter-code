@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  backend:
+    restart: always
+    build: .
+    ports: -5000:5000
+    volumes:
+      - .:/backend
+
+    env_file:
+      - .env
+    depends_on: -db
+  db:
+    image: postgres:12-alpine
+    ports: -5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: "starter-code"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_USER: "test"
