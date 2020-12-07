@@ -10,8 +10,8 @@ flask = "*"
 python-dotenv = "*"
 yapf = "*"
 firebase-admin = "*"
-psycopg2-binary = "*"
-sqlalchemy = "*"
+flask_sqlalchemy = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
