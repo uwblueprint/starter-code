@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
 
 def create_app():
@@ -11,7 +10,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    init_db(app=app, backend_store=os.environ['BACKEND'])
+    init_db(app = app)
 
     from . import routes
     app.register_blueprint(routes.blueprint)
