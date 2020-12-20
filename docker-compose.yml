@@ -3,11 +3,11 @@ version: "3.7"
 services:
   frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: frontend.Dockerfile
-    volumes:
-      - ".:/app"
-      - "/app/node_modules"
+    #volumes:
+    #  - ".:/app"
+    #  - "/app/node_modules"
     ports:
       - 3000:3000
     environment:
@@ -15,13 +15,12 @@ services:
   backend:
     restart: always
     build:
-      context: .
+      context: ./backend
       dockerfile: backend.Dockerfile
     ports:
       - 5000:5000
-    volumes:
-      - .:/backend
-
+    #volumes:
+    #  - .:/backend
     env_file:
       - .env
     depends_on:

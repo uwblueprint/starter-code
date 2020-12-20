@@ -1,4 +1,4 @@
-from backend import server
+from . import server
 
 app = server.create_app()
 
