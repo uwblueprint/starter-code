@@ -7,7 +7,7 @@ from csv import reader
 
 
 def _get_data():
-    filepath = os.path.join(os.getcwd(), 'backend/db/StarterCodeSampleData.csv')
+    filepath = os.path.join(os.getcwd(), 'db/StarterCodeSampleData.csv')
     with open(filepath) as data:
         csv_reader = reader(data)
 

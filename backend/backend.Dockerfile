@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN pip install pipenv
 COPY Pipfile* ./ 
-RUN pipenv install
+RUN pipenv install --deploy
 
 COPY . /app
 
