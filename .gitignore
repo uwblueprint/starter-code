@@ -2,6 +2,7 @@
 
 #config
 /backend/db/config
+/frontend/src/config
 
 # dependencies
 frontend/node_modules
