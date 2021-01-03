@@ -103,11 +103,11 @@ export const FIREBASE_CONFIGS = {
 
     If using Python + Flask + PostgreSQL, you should see:
 
-![Complete PostgreSQL setup](docs/COMPLETE_SETUP_POSTGRESQL.png)
+![Complete PostgreSQL setup](docs/COMPLETE_SETUP_POSTGRESQL.PNG)
 
 If using Firebase, you should see:
 
-![Complete Firebase setup](docs/COMPLETE_SETUP_FIREBASE.png)
+![Complete Firebase setup](docs/COMPLETE_SETUP_FIREBASE.PNG)
 
 ## Useful Commands for Development
 
